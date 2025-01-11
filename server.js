@@ -15,13 +15,13 @@ app.get('/api/users', (req, res) => {
 app.post('/api/user', (req, res) => {
   const user = req.body.user;
   users.push(user);
-  res.json("user addedd");
+  res.json("User added.");
 });
 
 app.get('/', (req,res) => {
   res.sendFile(process.cwd()+"/my-app/dist/angular-nodejs-example/index.html")
 });
 
-app.listen(port, () => {
-    console.log(`Server listening on the port::${port}`);
+app.listen(port, '0.0.0.0', () => {
+    console.log(`Server listening on the address <ANY>:${port}`);
 });
